@@ -17,3 +17,6 @@ A very dumb solution for the hashcode test problem about pizza slicing (also rat
 ## The logic..
 
 ..is really dumb. I generate a list of all possible slice shapes for a given dataset; then, when fetching a starting cell, I iterate over this list of shapes and pick the first one that fits and satisfies the constraints. The list of shapes is ordered from smallest to biggest, so this approach will pick the smallest conforming shape and then slice it. In this way I can only yield 8 points (out of 15) for the example set (`a_example.in`), but it's working surprisingly well for larger sets. I actually still don't beleive the results are correct - though they were validated in the Judge System.
+
+## Takeaway
+The idea of Google's Hashcode is to solve unsolvable problems in 4 hours. I've seen two problems from the competition - this test one and the qualification problem from 2018 (about self-driving cars). Both times we were getting seriously impressive scores from very stupid solutions -- so the takeaway would be to try first the fastest and dumbest approaches, and only after that to dive into designing real, though-out heuristics.
