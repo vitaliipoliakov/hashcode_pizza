@@ -10,7 +10,7 @@ A very dumb solution for the hashcode test problem about pizza slicing (also rat
 
 -- `pizza.py` - first attempt. It's really slow even for `c_medium.in` because it fetches the starting cell for the next slice by iterating over the list of all cells and finding the first available one (so list's length is R*C). With progress it has to iterate a lot and slows down considerably, obviously.
 
--- `pizza_faster.py` - the same but when getting a starting cell, it also remembers the pizza row it got it from. For the next starting cell it will start looking not from the beginning of the cells list, but from the position that corresponds to that remembered row. It's much faster, and runs the biggest dataset in about 2 minutes on i5-2520M.
+-- `pizza_faster.py` - the same but when getting a starting cell, it also remembers the pizza row it got it from. For the next starting cell it will start looking not from the beginning of the cells list, but from the position that corresponds to that remembered row. It's much faster, and runs the biggest dataset in about 2 minutes on i5-2520M with DDR3-1066 DIMMs.
 
 -- `pizza_evenfaster.py` - the same but instead of remembering the row of the last starting cell, it remembers the actual cell (that required of few annoying modifications to the original code). Next time it will then start from the last position. When the rows are big, like 1000 in `d_big.in`, it improves performance a lot - only 25 seconds as compared to 2 minutes for previous solution on my machine. For some reason, however, the results from this script are slightly lower than from `pizza_faster.py`. I guess that's because I somehow skip some of the starting cells, but I'm too lazy to find out where's the bug.
 
